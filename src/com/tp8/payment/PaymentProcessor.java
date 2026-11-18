@@ -1,12 +1,20 @@
 package com.tp8.payment;
 
-// Interface = le contrat que tous les moyens de paiement doivent respecter.
-// Elle dit CE QU'IL FAUT FAIRE, mais pas COMMENT le faire.
+// Une interface définit CE QUE les classes doivent faire, sans dire COMMENT.
+// Toute classe qui "implements PaymentProcessor" devra fournir ces deux méthodes.
 public interface PaymentProcessor {
 
-    // Traite un paiement. Retourne true si ça a marché, false sinon.
+    /**
+     * Traite une transaction de paiement.
+     * @param amount Le montant à payer en euros.
+     * @return true si le paiement est réussi, false sinon.
+     */
+    // Signature seule, sans corps { } : c'est une méthode abstraite
     boolean processPayment(double amount);
 
-    // Retourne le nom du moyen de paiement (pour l'affichage)
+    /**
+     * Retourne le nom du moyen de paiement.
+     * @return Le nom du processeur.
+     */
     String getPaymentMethod();
 }

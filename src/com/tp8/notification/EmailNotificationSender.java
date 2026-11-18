@@ -1,15 +1,14 @@
 package com.tp8.notification;
 
-// Envoi de notifications par email
 public class EmailNotificationSender implements NotificationSender {
 
     @Override
     public void sendNotification(String recipient, String message) {
-        // Validation simple : une adresse email doit contenir un "@"
-        // (c'est une vérification très basique, juste pour le TP)
+        // Validation propre à l'email : une adresse doit contenir un "@"
+        // (validation très simple, suffisante pour ce TP)
         if (!recipient.contains("@")) {
             System.out.println("[EMAIL] Erreur : Adresse invalide : " + recipient);
-            return; // on arrête ici, on n'envoie rien
+            return; // on quitte la méthode sans envoyer
         }
         System.out.println("[EMAIL] Envoi du message à " + recipient + " : " + message);
     }

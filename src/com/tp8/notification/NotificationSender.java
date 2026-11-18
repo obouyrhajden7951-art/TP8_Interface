@@ -1,11 +1,18 @@
 package com.tp8.notification;
 
-// Contrat pour tous les canaux de notification (email, SMS, ...)
+// Même principe que PaymentProcessor, appliqué à un autre domaine
 public interface NotificationSender {
 
-    // Envoie un message à un destinataire (email, numéro de téléphone...)
+    /**
+     * Envoie une notification.
+     * @param recipient Le destinataire (email, téléphone, etc.).
+     * @param message Le contenu du message.
+     */
     void sendNotification(String recipient, String message);
 
-    // Retourne le nom du canal (pour l'affichage)
+    /**
+     * Retourne le type de canal de notification.
+     * @return Le nom du canal.
+     */
     String getChannelType();
 }

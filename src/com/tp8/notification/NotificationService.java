@@ -1,11 +1,11 @@
 package com.tp8.notification;
 
-// Service de notification : il dépend de l'interface, pas d'Email ou de SMS.
 public class NotificationService {
 
+    // Dépend de l'interface : email, SMS ou tout futur canal fonctionnera
     private final NotificationSender sender;
 
-    // Pour changer de canal, il suffit de passer un autre sender ici
+    // Injection de dépendance par le constructeur
     public NotificationService(NotificationSender sender) {
         this.sender = sender;
     }
